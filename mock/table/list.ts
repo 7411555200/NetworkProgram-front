@@ -20,6 +20,20 @@ const tableList = (pageSize) => {
   return result;
 };
 
+const commandList = (pageSize) => {
+  const result: any[] = [];
+  doCustomTimes(pageSize, () => {
+    result.push({
+      id: '@integer(10,999999)',
+      name: '@cname()',
+      command: '@city()',
+      date: `@date('yyyy-MM-dd')`,
+      'status|1': [true, false],
+    });
+  });
+  return result;
+};
+
 export default [
   //表格数据列表
   {
@@ -28,7 +42,7 @@ export default [
     method: 'get',
     response: ({ query }) => {
       const { page = 1, pageSize = 10 } = query;
-      const list = tableList(Number(pageSize));
+      const list = commandList(Number(pageSize));
       return resultSuccess({
         page: Number(page),
         pageSize: Number(pageSize),

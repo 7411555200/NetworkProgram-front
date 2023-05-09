@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/list/basic-list',
     component: Layout,
     meta: {
-      title: '列表页面',
+      title: '服务器页面',
       icon: renderIcon(TableOutlined),
       sort: 2,
     },
@@ -30,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'basic-list',
         name: 'basic-list',
         meta: {
-          title: '基础列表',
+          title: '服务器列表',
         },
         component: () => import('@/views/list/basicList/index.vue'),
       },
@@ -38,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'basic-info/:id?',
         name: 'basic-info',
         meta: {
-          title: '基础详情',
+          title: '服务器详情',
           hidden: true,
           activeMenu: 'basic-list',
         },
